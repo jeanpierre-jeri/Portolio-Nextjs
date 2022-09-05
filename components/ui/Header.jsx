@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export const Header = () => {
   const handleClick = () => {
     document.body.classList.toggle('nav-open')
@@ -5,7 +7,9 @@ export const Header = () => {
 
   return (
     <header className="header">
-      <div className="logo">{/* <img src="/logo.svg" alt="jean pierre logo" /> */}</div>
+      <div className="logo">
+        <Image src="/logo.svg" width={160} height={20} alt="logo" />
+      </div>
       <div>
         <button className="nav-toggle" onClick={handleClick} aria-label="toggle navigation">
           <span className="hamburger"></span>
