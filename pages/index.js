@@ -26,7 +26,7 @@ export default function Home({ home, projects }) {
 export async function getStaticProps() {
   const [{ data: home }, { data: projects }] = await Promise.all([
     strapiApi.get('/home?populate=*'),
-    strapiApi.get('/projects?populate=*')
+    strapiApi.get('/projects?populate=*&sort=updatedAt:desc')
   ])
 
   return {
